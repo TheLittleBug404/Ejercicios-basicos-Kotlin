@@ -35,4 +35,15 @@ fun main() {
     println("Introdusca el dia de la semana")
     var dia:String = readLine()!!
     println("The movie ticket price for a person aged $edad is $"+precioEntradas(edad,dia))
+    //aca lo haremos con la funcion numero 2
+    println("The movie ticket price for a person aged $edad is $"+precioEntradas2(edad,dia))
+}
+//otra forma de hacer la funcion es
+fun precioEntradas2(edad:Int, dia:String):Int {
+    return when(edad){
+        in 0..12 -> 15
+        in 13..60 -> if(dia=="Lunes")25 else 30
+        in 61..100 -> 20
+        else -> -1
+    }
 }
